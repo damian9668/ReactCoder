@@ -3,12 +3,7 @@ import {Navbar} from "react-bootstrap";
 import {Container} from "react-bootstrap";
 import {Nav} from "react-bootstrap";
 import CartWidget from "./CartWidget";
-import {NavDropdown} from "react-bootstrap";
 import Logo from '../logo.png';  //  src/images
-import {Image} from "react-bootstrap";
-import {Form} from "react-bootstrap";
-import {FormControl} from "react-bootstrap";
-import {Button} from "react-bootstrap";
 
 const NavBar = () =>{
     return(
