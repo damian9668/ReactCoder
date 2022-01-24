@@ -1,16 +1,28 @@
-import React from "react";
 import ItemCount from "./ItemCount";
+import Item from "./Item";
+import ItemList from "./ItemList";
+import jsonpack from './data.json';
+import React, {useState,useEffect} from 'react';
 
 const ItemListContainer = (props) =>{
+
+    const[item,setItems]=useState([])
+    const call = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(jsonpack)
+        },2000)
+    })
+
+    call.then(response=> {
+        setItems(response)
+    })
+
 
     return(
         <div>
             <h3>{props.greeting}</h3>
-            <ItemCount stock={5} initial={1}  onAdd={onAdd} />
+            <ItemList items={item}/>
         </div>
     )
-}
-function onAdd(cant){
-    console.log(cant);
 }
 export default ItemListContainer
