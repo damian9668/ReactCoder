@@ -1,5 +1,3 @@
-import ItemCount from "./ItemCount";
-import Item from "./Item";
 import ItemList from "./ItemList";
 import jsonpack from './data.json';
 import React, {useState,useEffect} from 'react';
