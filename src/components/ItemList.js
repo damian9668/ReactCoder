@@ -7,16 +7,11 @@ const ItemList = ({items}) =>{
     return (
         <>
             <div className="d-flex flex-row d-flex justify-content-around mt-4">
-
                 { items.map(item=>
-
                     <Item key={item.id} jsonpack={item} />
                 )}
-
             </div>
-
         </>
-
     )
 }
 
