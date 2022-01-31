@@ -10,7 +10,7 @@ const NavBar = () =>{
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                         <img
                             src={Logo}
                             width="30"
@@ -22,14 +22,13 @@ const NavBar = () =>{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Electronica</Nav.Link>
-                            <Nav.Link href="#pricing">Arduino</Nav.Link>
-                            <Nav.Link href="#features">STM32 Boards</Nav.Link>
-                            <Nav.Link href="#pricing">ESP Boards</Nav.Link>
+                            <Nav.Link href="/">Electronica</Nav.Link>
+                            <Nav.Link href="/arduino">Arduino</Nav.Link>
+                            <Nav.Link href="/stm">STM32 Boards</Nav.Link>
 
                         </Nav>
                         <Nav>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link eventKey={2} href="/cart">
                                 <CartWidget></CartWidget>
                             </Nav.Link>
                         </Nav>

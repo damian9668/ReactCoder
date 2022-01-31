@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
 
         setTimeout(()=>{
-            fetch("https://api.mercadolibre.com/sites/MLA/search?q=electronica&limit=1")
+            fetch("https://api.mercadolibre.com/sites/MLA/search?q=arduino&limit=3")
                 .then(response=>response.json())
                 .then(data=>setProductos(data.results));
         },2000)
