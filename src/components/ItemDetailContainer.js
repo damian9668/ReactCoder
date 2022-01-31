@@ -1,13 +1,13 @@
 import ItemDetail from './ItemDetail';
 import React, {useState,useEffect} from 'react';
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
 
     const[productos,setProductos]=useState()
     useEffect(()=>{
 
         setTimeout(()=>{
-            fetch("https://api.mercadolibre.com/sites/MLA/search?q=arduino&limit=3")
+            fetch("https://api.mercadolibre.com/sites/MLA/search?q="+props.api+"&limit=3")
                 .then(response=>response.json())
                 .then(data=>setProductos(data.results));
         },2000)
