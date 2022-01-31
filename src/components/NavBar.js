@@ -23,8 +23,8 @@ const NavBar = () =>{
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/">Electronica</Nav.Link>
-                            <Nav.Link href="/arduino">Arduino</Nav.Link>
-                            <Nav.Link href="/stm">STM32 Boards</Nav.Link>
+                            <Nav.Link href="/arduino/:arduino">Arduino</Nav.Link>
+                            <Nav.Link href="/stm/:stm32">STM32 Boards</Nav.Link>
 
                         </Nav>
                         <Nav>

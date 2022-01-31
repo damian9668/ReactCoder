@@ -13,8 +13,8 @@ function App() {
             <NavBar/>
             <Routes>
               <Route path='/' element={<ItemListContainer greeting={"QUICK IC"}/>}></Route>
-              <Route path='/arduino' element={<ItemDetailContainer api={"arduino"}/>}></Route>
-              <Route path='/stm' element={<ItemDetailContainer api={"stm32"}/>}></Route>
+              <Route path='/arduino/:categoria' element={<ItemDetailContainer/>}></Route>
+              <Route path='/stm/:categoria' element={<ItemDetailContainer/>}></Route>
               <Route path='/cart' element={<Cart/>}></Route>
             </Routes>
         </div>
