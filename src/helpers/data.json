@@ -6,7 +6,7 @@
   "price": 75,
   "pictureurl": "https://cdn.shopify.com/s/files/1/0131/0792/0996/products/F0463612-01_2048x2048.jpg?v=1549381509",
   "stock": 15,
-  "category": "electronic"
+  "category": "electronica"
 },
 {
 "id": "2",
@@ -15,7 +15,7 @@
 "price": 100,
 "pictureurl": "https://www.hwlibre.com/wp-content/uploads/2020/07/diodo-1n4007-1024x546.jpg.webp",
 "stock": 12,
-"category": "electronic"
+"category": "electronica"
 },
 {
 "id": "3",
@@ -24,7 +24,7 @@
 "price": 380,
 "pictureurl": "https://http2.mlstatic.com/D_NQ_NP_662730-MLA43545760750_092020-O.webp",
 "stock": 8,
-"category": "electronic"
+"category": "electronica"
 },
 {
 "id": "4",
