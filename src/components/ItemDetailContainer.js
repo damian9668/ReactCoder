@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
                 .then(data=>setProductos(data.results));
         },2000)
 
-    },[]);
+    },);
 
     return (
         <div className="d-flex flex-row d-flex justify-content-around mt-4">

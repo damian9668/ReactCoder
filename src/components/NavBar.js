@@ -22,9 +22,9 @@ const NavBar = () =>{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/">Electronica</Nav.Link>
-                            <Nav.Link href="/kit/:arduino">Arduino</Nav.Link>
-                            <Nav.Link href="/kit/:stm32">STM32 Boards</Nav.Link>
+                            <Nav.Link href="/electronica">Electronica</Nav.Link>
+                            <Nav.Link href="/arduino">Arduino</Nav.Link>
+                            <Nav.Link href="/stm">STM32 Boards</Nav.Link>
 
                         </Nav>
                         <Nav>

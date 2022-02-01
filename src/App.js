@@ -12,8 +12,10 @@ function App() {
         <div className="App">
             <NavBar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting={"QUICK IC"}/>}></Route>
-              <Route path='/kit/:categoria' element={<ItemDetailContainer/>}></Route>
+                <Route path='/' element={<ItemListContainer greeting={"QUICK IC"}/>}></Route>
+              <Route path='/electronica' element={<ItemListContainer categoria={"electronica"}/>}></Route>
+              <Route path='/arduino' element={<ItemListContainer categoria={"arduino"}/>}></Route>
+              <Route path='/stm' element={<ItemListContainer categoria={"stm"}/>}></Route>
               <Route path='/cart' element={<Cart/>}></Route>
             </Routes>
         </div>

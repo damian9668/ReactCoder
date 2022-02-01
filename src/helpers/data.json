@@ -1,0 +1,83 @@
+[
+{
+  "id": "1",
+  "title": "Transistor BJT",
+  "description": "Transistor BJT del tipo NPN, de propósito general, empleado principalmente en aplicaciones de suicheo y amplificación.",
+  "price": 75,
+  "pictureurl": "https://cdn.shopify.com/s/files/1/0131/0792/0996/products/F0463612-01_2048x2048.jpg?v=1549381509",
+  "stock": 15,
+  "category": "electronic"
+},
+{
+"id": "2",
+"title": "Diodo 1N4007",
+"description": "El 1N4007 es un diodo rectificador de recuperación estándar con una caja de plástico moldeada. Terminales soldables según MIL-STD-202, método 208 estándar. La banda de color indica la polaridad del extremo del cátodo.",
+"price": 100,
+"pictureurl": "https://www.hwlibre.com/wp-content/uploads/2020/07/diodo-1n4007-1024x546.jpg.webp",
+"stock": 12,
+"category": "electronic"
+},
+{
+"id": "3",
+"title": "ESP-01",
+"description": "Se trata de un chip integrado con conexión WiFi y compatible con el protocolo TCP/IP. El objetivo principal es dar acceso a cualquier microcontrolador a una red.",
+"price": 380,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_662730-MLA43545760750_092020-O.webp",
+"stock": 8,
+"category": "electronic"
+},
+{
+"id": "4",
+"title": "Kit Arduino Uno R3 Principiante Con Estuche",
+"description": "kit para principiantes basado en el Arduino Uno. Contiene todo lo necesario para empezar tus proyectos con Arduino.",
+"price": 6700,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_639265-MLA47955276546_102021-O.webp",
+"stock": 50,
+"category": "arduino"
+},
+{
+"id": "5",
+"title": "Arduino Uno R3 Compatible Atmel Atmega328",
+"description": "El Arduino Uno es una placa basada en el ATmega328. Tiene 20 pines digitales",
+"price": 1050,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_816681-MLA43774126636_102020-O.webp",
+"stock": 800,
+"category": "arduino"
+},
+{
+"id": "6",
+"title": "Fuente Para Protoboard 5v 3.3v Mb102 Arduino",
+"description": "Placa adaptadora de alimentación para protoboard MB102, provee alimentación separada de 5V y 3.3V.",
+"price": 210,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_640902-MLA43955332249_102020-O.webp",
+"stock": 100,
+"category": "arduino"
+},
+{
+"id": "7",
+"title": "Modulo Desarrollo Stm32f103c8t6 Blue Pill Stm32 Nubbeo",
+"description": "Ésta increíble y potente tarjeta aporta a tus proyectos una gran cantidad de posibilidades, ya que es programable desde IDE de Arduino",
+"price": 1636,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_986609-MLA31063120060_062019-O.webp",
+"stock": 15,
+"category": "stm"
+},
+{
+"id": "8",
+"title": "Easymx Pro V7 Para Tarjeta Mcu Stm32",
+"description": "STM32F746 opera a 216 MHz alcanzando 1082 CoreMark / 462 DMIPS que es el máximo rendimiento teórico del núcleo Cortex-M7.",
+"price": 9540,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_702382-MLA48345717871_112021-O.webp",
+"stock": 10,
+"category": "stm"
+},
+{
+"id": "9",
+"title": "Programador St-link V2 De Microcontroladores Stm8 Y Stm32",
+"description": "El programador y depurador ST-Link V2 es la herramienta fundamental para los desarrolladores de sistemas embebidos que desean utilizar los microcontroladores de la serie STM32 y STM8",
+"price": 1380,
+"pictureurl": "https://http2.mlstatic.com/D_NQ_NP_853911-MLA32446651849_102019-O.webp",
+"stock": 40,
+"category": "stm"
+}
+]

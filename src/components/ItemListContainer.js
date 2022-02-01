@@ -1,6 +1,6 @@
 import ItemList from "./ItemList";
-import jsonpack from './data.json';
-import React, {useState,useEffect} from 'react';
+import jsonpack from '../helpers/data.json';
+import React, {useState} from 'react';
 
 const ItemListContainer = (props) =>{
 
@@ -13,7 +13,10 @@ const ItemListContainer = (props) =>{
 
     call.then(response=> {
         setItems(response)
+        console.log(item[0].category,"soy item")
     })
+
+
 
 
     return(
