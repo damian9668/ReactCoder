@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item'
-import ItemDetailContainer from "./ItemDetailContainer";
+
 
 
 const ItemList = ({items}) =>{

@@ -7,8 +7,8 @@ export const ProviderCustomizado = ({children}) => {
 
     const [carrito, setCarrito] = useState([]);
     //console.log(carrito, "estoy en context")
-    const [contador, setContador] = useState(0);
-    console.log(contador, "contador context")
+    // const [contador, setContador] = useState(0);
+    // console.log(contador, "contador context")
 
     function agregarCarrito(item,cant){
 
@@ -28,8 +28,8 @@ export const ProviderCustomizado = ({children}) => {
     const valorDelContexto = {
         carrito,
         setCarrito,
-        contador,
-        setContador,
+       // contador,
+       // setContador,
         agregarCarrito
     }
 

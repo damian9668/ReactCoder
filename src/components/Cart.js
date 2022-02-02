@@ -2,7 +2,7 @@ import React from "react";
 import "./Cart.css"
 
 const Cart =({jsonpack})=>{
-    console.log(jsonpack)
+   // console.log(jsonpack)
 
     return(
         <div className="cart_items">

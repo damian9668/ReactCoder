@@ -11,14 +11,11 @@ const Item =({jsonpack})=>{
                 <Card.Body>
                     <Card.Title>{jsonpack.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Precio: {jsonpack.price}</Card.Subtitle>
-                    {/*<ItemCount stock={jsonpack.stock} initial={1}  onAdd={onAdd} />*/}
                     <ItemDetailContainer item={jsonpack}/>
                 </Card.Body>
             </Card>
         </>
     );
 };
-// function onAdd(cant){
-//     console.log(cant);
-// }
+
 export default Item;
