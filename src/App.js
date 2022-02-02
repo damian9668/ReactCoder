@@ -16,6 +16,7 @@ function App() {
             <ProviderCustomizado>
                 <NavBar/>
                 <Routes>
+                    <Route path='/' exact element={<ItemListContainer categoria={"electronica"}/>}/>
                     <Route path='/electronica' exact element={<ItemListContainer categoria={"electronica"}/>}/>
                     <Route path='/arduino' exact element={<ItemListContainer categoria={"arduino"}/>}/>
                     <Route path='/stm' exact element={<ItemListContainer categoria={"stm"}/>}/>
