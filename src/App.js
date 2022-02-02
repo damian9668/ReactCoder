@@ -13,7 +13,7 @@ function App() {
   return (
       <BrowserRouter>
         <div className="App">
-            <UserContext value={"damian"}>
+
                 <NavBar/>
                 <Routes>
                     <Route path='/electronica' exact element={<ItemListContainer categoria={"electronica"}/>}/>
@@ -22,7 +22,7 @@ function App() {
                     <Route path='/cart' exact element={<Cart/>}/>
                     <Route path='/productos/:id' exact element={<ItemDetail/>}/>
                 </Routes>
-            </UserContext>
+
         </div>
       </BrowserRouter>
   );

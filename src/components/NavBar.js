@@ -10,7 +10,7 @@ const NavBar = () =>{
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand href="/electronica">
                         <img
                             src={Logo}
                             width="30"
