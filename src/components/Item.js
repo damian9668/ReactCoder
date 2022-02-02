@@ -1,6 +1,7 @@
 import React from "react";
 import {Card} from 'react-bootstrap';
 import ItemCount from "./ItemCount";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const Item =({jsonpack})=>{
     return(
@@ -9,11 +10,9 @@ const Item =({jsonpack})=>{
                 <Card.Img variant="top" src={jsonpack.pictureurl} />
                 <Card.Body>
                     <Card.Title>{jsonpack.title}</Card.Title>
-                    <Card.Text>
-                        {jsonpack.description}
-                    </Card.Text>
                     <Card.Subtitle className="mb-2 text-muted">Precio: {jsonpack.price}</Card.Subtitle>
                     <ItemCount stock={jsonpack.stock} initial={1}  onAdd={onAdd} />
+                    <ItemDetailContainer item={jsonpack}/>
                 </Card.Body>
             </Card>
         </>

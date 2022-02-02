@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {UserContext} from "../App";
 
 function ItemCount({initial, stock, onAdd}) {
     const [contador, setcontador] = useState(initial);

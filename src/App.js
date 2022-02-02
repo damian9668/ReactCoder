@@ -1,23 +1,28 @@
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import React from "react";
+import {BrowserRouter, Route, Routes, Switch} from "react-router-dom"
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
+import ItemDetail from "./components/ItemDetail";
+import {UserContext} from "./context/CartContext";
+
 
 function App() {
   return (
       <BrowserRouter>
         <div className="App">
-            <NavBar/>
-            <Routes>
-                <Route path='/' element={<ItemListContainer greeting={"QUICK IC"}/>}></Route>
-              <Route path='/electronica' element={<ItemListContainer categoria={"electronica"}/>}></Route>
-              <Route path='/arduino' element={<ItemListContainer categoria={"arduino"}/>}></Route>
-              <Route path='/stm' element={<ItemListContainer categoria={"stm"}/>}></Route>
-              <Route path='/cart' element={<Cart/>}></Route>
-            </Routes>
+            <UserContext value={"damian"}>
+                <NavBar/>
+                <Routes>
+                    <Route path='/electronica' exact element={<ItemListContainer categoria={"electronica"}/>}/>
+                    <Route path='/arduino' exact element={<ItemListContainer categoria={"arduino"}/>}/>
+                    <Route path='/stm' exact element={<ItemListContainer categoria={"stm"}/>}/>
+                    <Route path='/cart' exact element={<Cart/>}/>
+                    <Route path='/productos/:id' exact element={<ItemDetail/>}/>
+                </Routes>
+            </UserContext>
         </div>
       </BrowserRouter>
   );

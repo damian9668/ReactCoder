@@ -13,8 +13,7 @@ const ItemListContainer = (props) =>{
     })
 
     call.then(response=> {
-        setItems(response.filter(item => item.category=== props.categoria))
-        //console.log(item[0].category,"soy item")
+        setItems(response.filter(item => item.category === props.categoria))
     })
 
 
@@ -22,8 +21,8 @@ const ItemListContainer = (props) =>{
 
     return(
         <div>
-            <h3>{props.greeting}</h3>
             <ItemList items={items}/>
+
         </div>
     )
 }
