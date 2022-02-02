@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import {UserContext} from "../App";
+import {useContext, useState} from 'react';
+import ItemContext from "../context/CartContext";
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({initial, stock, onAdd, item}) {
     const [contador, setcontador] = useState(initial);
+    const {agregarCarrito} = useContext(ItemContext);
 
     const handleAumentar=()=>{
         if (contador < stock) {
@@ -19,7 +20,11 @@ function ItemCount({initial, stock, onAdd}) {
     }
 
     const agregar=()=>{
-        onAdd(contador)
+        console.log(item,"agregado")
+
+        agregarCarrito(item,contador)
+        //console.log(carrito, "carrito")
+
     }
 
     return (
