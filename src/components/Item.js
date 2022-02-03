@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Item =({jsonpack})=>{
 
     return(
-        <>
-            <Card style={{ width: '18rem' }}>
+        <div className="col-4 d-flex justify-content-center">
+            <Card style={{ width: '18rem', marginTop:"2rem" }} >
                 <Card.Img variant="top" src={jsonpack.pictureurl} />
                 <Card.Body>
                     <Card.Title>{jsonpack.title}</Card.Title>
@@ -18,7 +18,7 @@ const Item =({jsonpack})=>{
                     </Link>
                 </Card.Body>
             </Card>
-        </>
+        </div>
     );
 };
 

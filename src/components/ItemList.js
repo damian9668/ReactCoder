@@ -8,7 +8,7 @@ const ItemList = ({items}) =>{
     //console.log(items);
     return (
         <>
-            <div className="d-flex flex-row d-flex justify-content-around mt-4">
+            <div className="row justify-content-around w-100">
                 { items.map(item=>
                     <Item key={item.id} jsonpack={item} />
                 )}

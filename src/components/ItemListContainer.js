@@ -26,7 +26,7 @@ const ItemListContainer = (props) =>{
     }, [idCategoria]);
 
     return(
-        <div>
+        <div className="d-flex container-fluid">
             <ItemList items={items}/>
         </div>
     )
