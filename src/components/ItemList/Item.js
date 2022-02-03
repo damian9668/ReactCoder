@@ -21,5 +21,4 @@ const Item =({jsonpack})=>{
         </div>
     );
 };
-
 export default Item;

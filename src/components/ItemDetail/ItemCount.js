@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import ItemContext from "../context/CartContext";
+import ItemContext from "../../context/CartContext";
 import {Link} from "react-router-dom";
 
 function ItemCount({initial, stock, item}) {

@@ -1,5 +1,5 @@
 import ItemList from "./ItemList";
-import jsonpack from '../helpers/data.json';
+import jsonpack from '../../helpers/data.json';
 import React, {useEffect, useState, } from 'react';
 import { useParams } from "react-router-dom";
 
