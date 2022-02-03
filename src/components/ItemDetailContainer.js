@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 import jsonpack from '../helpers/data.json';
 import ItemDetail from './ItemDetail';
@@ -28,9 +28,6 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="container w-50">
-            {/*<Link className="btn btn-outline-primary btn-block" to={`/productos/${id}`}>*/}
-            {/*    Detalle*/}
-            {/*</Link>*/}
             <ItemDetail item = {item} />
         </div>
     )

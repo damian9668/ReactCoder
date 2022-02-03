@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/ItemListContainer";
 import CartContainer from "./components/CartContainer";
-import ItemDetail from "./components/ItemDetail";
 import {ProviderCustomizado} from "./context/CartContext";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
