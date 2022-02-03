@@ -1,13 +1,40 @@
+import React, { useState,useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import React, {useState,useEffect} from 'react';
-import {Navigate, Redirect, useParams} from "react-router-dom";
-import {Link} from "react-router-dom";
+import jsonpack from '../helpers/data.json';
+import ItemDetail from './ItemDetail';
 
-const ItemDetailContainer = (props) => {
+
+const ItemDetailContainer = () => {
+
+
+    const[ item ,setItem  ] = useState([])
+    const { id } = useParams();
+
+    useEffect(() => {
+
+        const call = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(jsonpack)
+            },2000)
+        })
+
+        call.then(response=> {
+            setItem(response.find(i => i.id === id));
+        })
+    }, [id]);
+
 
     return (
         <div className="container w-50">
-            <Link className="btn btn-outline-primary btn-block" to={"/productos/"+props.item.id}>Detalle</Link>
+
+            <Link className="btn btn-outline-primary btn-block"
+                  to={`/productos/${id}`}
+            >
+                Detalle
+                <ItemDetail item = {item} />
+            </Link>
         </div>
     )
 }

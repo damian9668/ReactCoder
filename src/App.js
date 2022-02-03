@@ -7,6 +7,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import CartContainer from "./components/CartContainer";
 import ItemDetail from "./components/ItemDetail";
 import {ProviderCustomizado} from "./context/CartContext";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
 function App() {
@@ -16,12 +17,10 @@ function App() {
             <ProviderCustomizado>
                 <NavBar/>
                 <Routes>
-                    <Route path='/' exact element={<ItemListContainer categoria={"electronica"}/>}/>
-                    <Route path='/electronica' exact element={<ItemListContainer categoria={"electronica"}/>}/>
-                    <Route path='/arduino' exact element={<ItemListContainer categoria={"arduino"}/>}/>
-                    <Route path='/stm' exact element={<ItemListContainer categoria={"stm"}/>}/>
+                    <Route path='/' exact element={<ItemListContainer/>}/>
+                    <Route path='/categoria/:idCategoria' exact element={<ItemListContainer categoria={"stm"}/>}/>
                     <Route path='/cart' exact element={<CartContainer/>}/>
-                    <Route path='/productos/:id' exact element={<ItemDetail/>}/>
+                    <Route path='/productos/:id' exact element={<ItemDetailContainer/>}/>
                 </Routes>
             </ProviderCustomizado>
         </div>

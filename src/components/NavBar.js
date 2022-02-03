@@ -11,7 +11,7 @@ const NavBar = () =>{
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/electronica">
+                    <Navbar.Brand as={Link} to="/">
                         <img
                             src={Logo}
                             width="30"
@@ -23,9 +23,9 @@ const NavBar = () =>{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/electronica">Electronica</Nav.Link>
-                            <Nav.Link as={Link} to="/arduino">Arduino</Nav.Link>
-                            <Nav.Link as={Link} to="/stm">STM32 Boards</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/electronica">Electronica</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/arduino">Arduino</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/stm">STM32 Boards</Nav.Link>
 
                         </Nav>
                         <Nav>

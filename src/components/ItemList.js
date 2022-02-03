@@ -3,6 +3,7 @@ import Item from './Item'
 
 
 
+
 const ItemList = ({items}) =>{
     //console.log(items);
     return (
@@ -11,7 +12,6 @@ const ItemList = ({items}) =>{
                 { items.map(item=>
                     <Item key={item.id} jsonpack={item} />
                 )}
-
             </div>
         </>
     )
