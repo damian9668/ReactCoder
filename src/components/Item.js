@@ -12,7 +12,7 @@ const Item =({jsonpack})=>{
                     <Card.Title>{jsonpack.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Precio: {jsonpack.price}</Card.Subtitle>
                     <Link to={`/productos/${jsonpack.id} `} >
-                        <button>
+                        <button className="btn btn-outline-primary btn-block">
                             Detalle
                         </button>
                     </Link>

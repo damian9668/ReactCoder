@@ -28,13 +28,10 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="container w-50">
-
-            <Link className="btn btn-outline-primary btn-block"
-                  to={`/productos/${id}`}
-            >
-                Detalle
-                <ItemDetail item = {item} />
-            </Link>
+            {/*<Link className="btn btn-outline-primary btn-block" to={`/productos/${id}`}>*/}
+            {/*    Detalle*/}
+            {/*</Link>*/}
+            <ItemDetail item = {item} />
         </div>
     )
 }
