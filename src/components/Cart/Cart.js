@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./Cart.css"
+import ItemContext from "../../context/CartContext";
+
+
 
 const Cart =({jsonpack})=>{
    // console.log(jsonpack)
+    const {eliminarCart}=useContext(ItemContext)
 
     return(
         <div className="cart_items">
@@ -26,6 +30,7 @@ const Cart =({jsonpack})=>{
                         <div className="cart_item_total cart_info_col">
                             <div className="cart_item_title">Total</div>
                             <div className="cart_item_text">{jsonpack.cant * jsonpack.price}</div>
+                            <button className="btn btn-outline-primary btn-block" onClick={()=>eliminarCart(jsonpack.id)}>Eliminar</button>
                         </div>
                     </div>
                 </li>

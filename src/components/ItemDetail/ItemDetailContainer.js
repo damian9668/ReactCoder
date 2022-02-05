@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import jsonpack from '../../helpers/data.json';
 import ItemDetail from './ItemDetail';
 import Load from "../Loading";
-import ItemList from "../ItemList/ItemList";
+
 
 
 const ItemDetailContainer = () => {
