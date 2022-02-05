@@ -30,7 +30,6 @@ export const ProviderCustomizado = ({children}) => {
     const eliminarCart =(id)=>{
         const carritoUpdate = carrito.filter(carrito => carrito.id !== id)
         setCarrito(carritoUpdate)
-        setCount(carritoUpdate.length)
         setCount(count-1)
     }
 
