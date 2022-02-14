@@ -15,7 +15,9 @@ export const ProviderCustomizado = ({children}) => {
         const index = carrito.findIndex(ele => ele.id === item.id)
 
 
+        console.log(carrito, item , "soy el carrito")
         if(!duplicado){
+
             item.cant=cant
             setCarrito([...carrito,item])
             setCount(count+1)

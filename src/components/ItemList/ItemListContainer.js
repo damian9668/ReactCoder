@@ -30,7 +30,7 @@ const ItemListContainer = (props) =>{
                 const result = resp.docs.map(item =>{
                     return{id:item.id, ...item.data()}
                 })
-                console.log(result, "soy  firebase")
+               // console.log(result, "soy  firebase")
                 setItems( idCategoria ? result.filter(item => item.category === idCategoria) : result );
                 //setItems(result)
                 setLoading(false)

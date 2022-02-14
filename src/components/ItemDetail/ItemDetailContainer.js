@@ -21,12 +21,13 @@ const ItemDetailContainer = () => {
 
         const db  = getFirestore()
 
-       // traer un elemento
         const dbcollection = doc(db,"items",id)
         getDoc(dbcollection)
             .then(resp => {
                 setLoading(false)
-                setItem(resp.data());
+                const result = resp.data();
+                result.id = resp.id
+                setItem(result);
                 //console.log(resp.data())
             })
 
