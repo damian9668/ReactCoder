@@ -1,8 +1,10 @@
 import ItemList from "./ItemList";
-import jsonpack from '../../helpers/data.json';
+
 import React, {useEffect, useState, } from 'react';
 import { useParams } from "react-router-dom";
 import Load from "../Loading";
+import { doc, getFirestore,getDoc, collection,getDocs } from "firebase/firestore"
+
 
 
 const ItemListContainer = (props) =>{
@@ -14,16 +16,25 @@ const ItemListContainer = (props) =>{
 
     useEffect(() => {
 
-        const call = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                setLoading(false)
-                resolve(jsonpack)
-            },2000)
-        })
+        const db  = getFirestore()
 
-        call.then(response=> {
-            setItems( idCategoria ? response.filter(item => item.category === idCategoria) : response );
-        })
+        //traer un elemento
+        // const dbcollection = doc(db,"items","0DCNVFpDzNEkTGYjBllv")
+        // getDoc(dbcollection)
+        //     .then(resp => console.log(resp.data()))
+
+        //traer una coleccion
+        const queryCollection = collection(db,"items")
+        getDocs(queryCollection)
+            .then(resp => {
+                const result = resp.docs.map(item =>{
+                    return{id:item.id, ...item.data()}
+                })
+                console.log(result, "soy  firebase")
+                setItems( idCategoria ? result.filter(item => item.category === idCategoria) : result );
+                //setItems(result)
+                setLoading(false)
+            })
 
 
     }, [idCategoria]);

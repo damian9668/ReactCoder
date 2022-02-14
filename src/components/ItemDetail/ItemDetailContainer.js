@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import jsonpack from '../../helpers/data.json';
 import ItemDetail from './ItemDetail';
 import Load from "../Loading";
+import {collection, doc, getDoc, getDocs, getFirestore} from "firebase/firestore";
 
 
 
@@ -17,16 +18,18 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-        const call = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                setLoading(false)
-                resolve(jsonpack)
-            },2000)
-        })
 
-        call.then(response=> {
-            setItem(response.find(i => i.id === id));
-        })
+        const db  = getFirestore()
+
+       // traer un elemento
+        const dbcollection = doc(db,"items",id)
+        getDoc(dbcollection)
+            .then(resp => {
+                setLoading(false)
+                setItem(resp.data());
+                //console.log(resp.data())
+            })
+
     }, [id]);
 
 
