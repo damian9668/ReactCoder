@@ -1,11 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { useParams } from "react-router-dom";
-
-
-import jsonpack from '../../helpers/data.json';
 import ItemDetail from './ItemDetail';
 import Load from "../Loading";
-import {collection, doc, getDoc, getDocs, getFirestore} from "firebase/firestore";
+import {doc, getDoc, getFirestore} from "firebase/firestore";
 
 
 
