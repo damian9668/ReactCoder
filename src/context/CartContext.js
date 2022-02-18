@@ -7,6 +7,7 @@ export const ProviderCustomizado = ({children}) => {
 
     const [carrito, setCarrito] = useState([]);
     const [count, setCount] = useState(0)
+    const [idOrden, setIdOrden] = useState("")
 
     function agregarCarrito(item,cant){
 
@@ -40,7 +41,10 @@ export const ProviderCustomizado = ({children}) => {
         setCarrito,
         agregarCarrito,
         eliminarCart,
-        count
+        count,
+        idOrden,
+        setIdOrden,
+        setCount
     }
 
     return(

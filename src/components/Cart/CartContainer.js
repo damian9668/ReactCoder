@@ -4,12 +4,20 @@ import Cart from "./Cart";
 import CartEmpty from "./CartEmpty";
 import {collection, getFirestore,addDoc, updateDoc, doc} from "firebase/firestore";
 import Orden from "./Orden";
+import { Formik, Field, Form, ErrorMessage} from 'formik';
+import * as Yup from 'yup';
+
+
+
 
 
 const CartContainer = () =>{
 
-    const [datosorden, setDatosorden] = useState({name:"",email:"",phone:""});
+    const{setCount,setIdOrden}=useContext(ItemContext)
+
     const[ordenenviada, setOrdenenviada] = useState(false)
+    const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
 
 
     const {carrito}=useContext(ItemContext)
@@ -20,14 +28,15 @@ const CartContainer = () =>{
 
     }
     const realizarCompra = async (e) => {
-        e.preventDefault()
+       // e.preventDefault()
 
         let order = {}
         let Total = 0;
 
-        order.buyer = {name: datosorden.name,
-                       email: datosorden.email,
-                       phone: datosorden.phone}
+        order.buyer = {name: e.firstName,
+                       email: e.email,
+                       phone: e.phone}
+
 
         order.items = carrito.map(Cartitem =>{
             const id = Cartitem.id
@@ -42,7 +51,8 @@ const CartContainer = () =>{
             const db = getFirestore()
             const stockUpdate = doc(db, "items",Cartitem.id)
             updateDoc(stockUpdate, {stock: (Cartitem.stock - Cartitem.cant)})
-
+            setCount(0)
+            setIdOrden(Cartitem.id)
             return{
                 id,
                 nombre,
@@ -56,18 +66,10 @@ const CartContainer = () =>{
         const ordersCollection = collection (db,"orders")
         await addDoc(ordersCollection, order)
          //   .then(resp => console.log(resp))
-       // console.log(datosorden)
         setOrdenenviada(true)
 
     }
 
-   const onChange = e =>{
-        setDatosorden({
-            ...datosorden,
-            [e.target.name]:e.target.value
-        })
-       // console.log(datosorden)
-    }
     return(
         <>
             {redirect ? <CartEmpty/> : (ordenenviada ? <Orden/> :
@@ -94,29 +96,51 @@ const CartContainer = () =>{
                                             },0 )}</div>
                                         </div>
                                     </div>
-                                    <form className="cart_section container-fluid col-lg-6 ">
-                                        <div className="form-group row">
-                                            <label htmlFor="inputName" className="col-sm-2 col-form-label">Nombre</label>
-                                            <div className="col-sm-10">
-                                                <input onChange={e=>onChange(e)} name="name" type="text" className="form-control" id="inputName" placeholder="Nombre"/>
-                                            </div>
-                                            <div className="form-group row">
-                                                <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email</label>
-                                                <div className="col-sm-10">
-                                                    <input onChange={e=>onChange(e)} name="email" type="email" className="form-control" id="inputEmail" placeholder="Email"/>
+                                    {/*Formik start*/}
+                                    <Formik
+                                        initialValues={{
+                                            firstName: '',
+                                            phone: '',
+                                            email: ''
+                                        }}
+                                        validationSchema={Yup.object().shape({
+                                            firstName: Yup.string()
+                                                .required('Nombre Requerido'),
+                                            phone: Yup.string()
+                                                 .matches(phoneRegExp, 'Telefono Invalido')
+                                                .required('Telefono Requerido'),
+                                            email: Yup.string()
+                                                .email('Email Invalido')
+                                                .required('Email Requerido'),
+                                        })}
+                                        onSubmit={fields => {
+                                            realizarCompra(fields);
+                                            //console.log(fields)
+                                        }}
+                                        render={({ errors, status, touched }) => (
+                                            <Form className="cart_section container-fluid col-lg-6 ">
+                                                <div className="form-group row">
+                                                    <label  htmlFor="inputName col-sm-2 col-form-label">Nombre</label>
+                                                    <Field  name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="firstName" component="div" className="invalid-feedback" />
                                                 </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <label htmlFor="inputPhone" className="col-sm-2 col-form-label">Telefono</label>
-                                                <div className="col-sm-10">
-                                                    <input onChange={e=>onChange(e)} name="phone" type="Phone" className="form-control" id="inputPhone" placeholder="Telefono"/>
+                                                <div className="form-group row">
+                                                    <label htmlFor="inputPhone">Telefono</label>
+                                                    <Field name="phone" type="text" className={'form-control' + (errors.phone && touched.phone ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="phone" component="div" className="invalid-feedback" />
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div className="cart_buttons">
-                                        <button type="button" onClick={realizarCompra} className="button cart_button_checkout">Finalizar Compra</button>
-                                    </div>
+                                                <div className="form-group row">
+                                                    <label htmlFor="email">Email</label>
+                                                    <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                                                </div>
+                                                <div className="cart_buttons">
+                                                    <button type="submit" className="button cart_button_checkout">Finalizar Compra</button>
+                                                </div>
+                                            </Form>
+                                        )}
+                                    />
+                                    {/*Formik end*/}
                                 </div>
                             </div>
                         </div>
