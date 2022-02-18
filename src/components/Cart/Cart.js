@@ -5,7 +5,6 @@ import ItemContext from "../../context/CartContext";
 
 
 const Cart =({jsonpack})=>{
-   // console.log(jsonpack)
     const {eliminarCart}=useContext(ItemContext)
 
     return(

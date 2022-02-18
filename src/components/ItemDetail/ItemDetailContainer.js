@@ -25,7 +25,6 @@ const ItemDetailContainer = () => {
                 const result = resp.data();
                 result.id = resp.id
                 setItem(result);
-                //console.log(resp.data())
             })
 
     }, [id]);

@@ -28,7 +28,6 @@ const CartContainer = () =>{
 
     }
     const realizarCompra = async (e) => {
-       // e.preventDefault()
 
         let order = {}
         let Total = 0;
@@ -46,7 +45,6 @@ const CartContainer = () =>{
 
             Total += Cartitem.price * Cartitem.cant;
             order.total = Total
-            //console.log(Total)
             //actualizar documento
             const db = getFirestore()
             const stockUpdate = doc(db, "items",Cartitem.id)
@@ -60,12 +58,10 @@ const CartContainer = () =>{
                 cantidad
             }
         })
-        //console.log(order)
 
         const db = getFirestore()
         const ordersCollection = collection (db,"orders")
         await addDoc(ordersCollection, order)
-         //   .then(resp => console.log(resp))
         setOrdenenviada(true)
 
     }
@@ -83,7 +79,6 @@ const CartContainer = () =>{
                                     <div>
                                         { carrito.map(item=>
                                             <Cart key={item.id} jsonpack={item} />
-
                                         )}
                                     </div>
                                     <div className="order_total">
@@ -115,7 +110,6 @@ const CartContainer = () =>{
                                         })}
                                         onSubmit={fields => {
                                             realizarCompra(fields);
-                                            //console.log(fields)
                                         }}
                                         render={({ errors, status, touched }) => (
                                             <Form className="cart_section container-fluid col-lg-6 ">

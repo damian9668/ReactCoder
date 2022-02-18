@@ -15,8 +15,6 @@ export const ProviderCustomizado = ({children}) => {
         const duplicado = carrito.find(ele => ele.id === item.id)
         const index = carrito.findIndex(ele => ele.id === item.id)
 
-
-        //console.log(carrito, item , "soy el carrito")
         if(!duplicado){
 
             item.cant=cant

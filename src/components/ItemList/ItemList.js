@@ -5,7 +5,6 @@ import Item from './Item'
 
 
 const ItemList = ({items}) =>{
-    //console.log(items);
     return (
         <>
             <div className="row justify-content-around w-100">

@@ -10,19 +10,16 @@ function ItemCount({initial, stock, item}) {
     const handleAumentar=()=>{
         if (contador < stock) {
             setcontador(contador + 1)
-           // console.log("sumado")
         }
     }
 
     const handlerRestar=()=>{
         if (contador > initial) {
             setcontador(contador - 1)
-           // console.log("restado")
         }
     }
 
     const agregar=()=>{
-        //console.log(item,"agregado")
         agregarCarrito(item,contador)
         setMostrarComponente(!mostrarComponente)
     }
