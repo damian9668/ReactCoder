@@ -12,8 +12,6 @@ const CartContainer = () =>{
 
     const{setCount,setIdOrden}=useContext(ItemContext)
     const[ordenenviada, setOrdenenviada] = useState(false)
-    const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-
 
 
     const {carrito,setCarrito}=useContext(ItemContext)
@@ -64,6 +62,10 @@ const CartContainer = () =>{
         setOrdenenviada(true)
 
     }
+    function vaciarCarrito(){
+        setCarrito([])
+        setCount(0)
+    }
 
     return(
         <>
@@ -80,13 +82,14 @@ const CartContainer = () =>{
                                         )}
                                     </div>
                                     <div className="order_total">
-                                        <div className="order_total_content text-md-right">
+                                        <div className="order_total_content text-md-right ">
                                             <div className="order_total_title">Total:</div>
                                             <div className="order_total_amount">{carrito.reduce((total,elemento) =>{
                                                 return(
                                                     total+= elemento.price * elemento.cant
                                                 )
                                             },0 )}</div>
+                                            <button onClick={vaciarCarrito} type="submit" className="btn btn-outline-primary btn-block ms-4">Vaciar Carrito</button>
                                         </div>
                                     </div>
                                     {/*Formik start*/}
@@ -98,9 +101,11 @@ const CartContainer = () =>{
                                         }}
                                         validationSchema={Yup.object().shape({
                                             firstName: Yup.string()
+                                                .matches(/^[a-zA-Z ]+$/,'Nombre Invalido')
                                                 .required('Nombre Requerido'),
                                             phone: Yup.string()
-                                                .matches(phoneRegExp, 'Telefono Invalido')
+                                                .min(5,'Telefono Invalido')
+                                                .matches(/^[0123456789+]+$/, 'Telefono Invalido')
                                                 .required('Telefono Requerido'),
                                             email: Yup.string()
                                                 .email('Email Invalido')
